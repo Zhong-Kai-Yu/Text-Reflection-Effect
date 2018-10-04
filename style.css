@@ -1,0 +1,42 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(#03a9f4, #004b6d);
+  height: 100vh;
+}
+
+h1
+{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 6em; /* 1em for 2 inch*/
+}
+
+h1:before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: 0.865em;
+    background: linear-gradient(0deg, #fff 0, transparent 80%);
+    /* 背景下方為0度 順時針旋轉增加角度，由於原先的圖已經旋轉180度
+       所以現在上方代表0度
+       由白色開始做漸層，0代表遊圖中幾%後開始做漸層，由於要從一開始
+       就坐漸層，所以填0，但默認也是0，所以可寫可不寫
+       要做的透明度百分比，由於不需要全部消失，所以填80%
+    */
+    -webkit-background-clip: text;
+    /* 裁切背景所需要延伸到的範圍，只需要覆蓋整個文字即可*/
+    color: transparent;
+}
